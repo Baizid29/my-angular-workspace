@@ -1,0 +1,9 @@
+<!-- Ex:  How data is transferred from child to parent component -->
+
+<div class="container-fluid bg-danger m-4 p-4 text-white" style="height: 400px; width: 1000px;">
+	<h2>Parent Component</h2>
+	 <div class="mb-3">
+		 <button (click)="SendClick()" class="btn btn-dark">Send Message to Child</button>
+		 {{message}} -  {{Name}} : {{Price}}
+	 </div>
+	<app-son (ChildComponentSendObjectClick)="SendObject($event)" (ChildComponentClick)="SendToParent($event)" [obj]="objectToChild" [message]="messageToChild"></app-son>

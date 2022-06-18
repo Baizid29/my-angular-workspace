@@ -1,0 +1,23 @@
+<div class="box">
+	<h2>{{title}}</h2>
+	<div class="group">
+		<label>User Name</label>
+		<div>
+			<input type="text">
+		</div>
+		</div>
+		<div class="group">
+			<label>Password</label>
+		<div>
+			<input type="password">
+		</div>
+	</div>
+	<div class="group">
+		<label>Verify Code</label>
+		<div>
+			<button (click)="NewCode()">{{code}} <span class="bi bi-arrow-repeat"></span></button> </div>
+	</div>
+	<div class="group">
+		<button>Login</button>
+	</div>
+</div>

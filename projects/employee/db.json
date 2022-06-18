@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "firstname": "Sk",
+      "lastname": "Baizid",
+      "birthdate": "1998-10-07",
+      "gender": "m",
+      "education": "post graduate",
+      "company": "Cognizant",
+      "jobExperience": 1,
+      "salary": 3.6,
+      "profile": "image1.jpg",
+      "id": 1
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

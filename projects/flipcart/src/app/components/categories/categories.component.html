@@ -1,0 +1,7 @@
+<h3 style="color: tomato;">Welcome {{userid}}</h3>
+<h3>Categories  <button (click)="SignoutClick()" class="btn btn-warning">Signout</button></h3>
+<ol>
+    <li *ngFor="let item of categories">
+        <a routerLink="/products/{{item}}">{{item|titlecase}}</a>
+    </li>
+</ol>

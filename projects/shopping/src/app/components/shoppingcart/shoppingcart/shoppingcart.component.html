@@ -1,0 +1,68 @@
+<div class="container-fluid">
+	<header class="p-2 bg-danger text-white text-center">
+		<h1><span class="bi bi-cart-fill"></span>Fakestore-Online Shopping</h1>
+	</header>
+	<section class="row">
+		<nav class="col-3">
+			<div class="mt-3">
+				<label class="form-label">Select a Category</label>
+				<div>
+					<select class="form-select" (change)="CategoryChanged($event)">
+						<option [value]="category" *ngFor="let category of categories">
+							{{category|titlecase}}
+						</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="mt-2" *ngIf="toggleCart">
+				<label>Your Cart</label>
+				<table class="tabe table-hover">
+					<thead>
+						<tr>
+							<th>Title</th>
+							<th>Price</th>
+							<th>Preview</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let item of CartItems">
+							<td>{{item.title}}</td>
+							<td>{{item.price}}</td>
+							<td><img [src]="item.image" width="50" height="50"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</nav>
+		<main class="col-7">
+			<div class="d-flex flex-wrap m-3 overflow-auto" style="height: 500px;">
+				<div *ngFor="let product of products" class="card m-2 p-2" style="width: 200px;">
+					<img [src]="product.image" height="150" class="card-img-top">
+					<div class="card-header" style="height: 160px;">
+						<p><b>{{product.title}}</b></p>
+					</div>
+					<div class="card-body">
+					   <dl>
+						   <dt>Price</dt>
+						   <dd>{{product.price}}</dd>
+						   <dt>Rating</dt>
+						   <dd><span class="bi bi-star-fill text-success"></span> {{product.rating.rate}} [{{product.rating.count}}]</dd>
+					   </dl>
+					</div>
+					<div class="card-footer">
+						<button (click)="AddToCartClick(product)" class="btn btn-danger w-100">
+							<span class="bi bi-cart4"></span>
+							 Add to Cart
+						</button>
+					</div>
+				</div>
+			</div>
+		 </main>
+		 <article class="col-2">
+			<div class="mt-3">
+				<button (click)="Toggle()" class="btn btn-danger w-100"> <span class="bi bi-cart"></span> [{{count}}] Your Cart Items</button>
+			</div>
+		 </article>
+	</section>
+</div>

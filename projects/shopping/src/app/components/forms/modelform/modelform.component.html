@@ -1,0 +1,29 @@
+<!-- EX: Example of model form/Reactive forms -->
+<div class="container-fluid">
+    <form [formGroup]="frmRegister" (submit)="FormSubmit(frmRegister.value)" class="bg-warning p-3 w-75">
+        <h2>Basic Details</h2>
+        <dl>
+            <dt>Name</dt>
+            <dd><input formControlName="Name" type="text"></dd>
+            <dt>Price</dt>
+            <dd><input type="text" formControlName="Price"></dd>
+            <div formGroupName="frmStock" class="bg-info p-3 w-25">
+                <h3>Stock Details</h3>
+                <dl>
+                    <dt>Status</dt>
+                    <dd><input type="checkbox" formControlName="Status"> Available</dd>
+                    <dt>City</dt>
+                    <dd>
+                        <select formControlName="City">
+                            <option>Delhi</option>
+                            <option>Hyd</option>
+                            <option>Chennai</option>
+                        </select>
+                    </dd>
+                </dl>
+            </div>
+        </dl>
+        <button>Register</button>
+        <button (click)="UpdatePartial()" type="button">Update Partial</button>
+    </form>
+</div>

@@ -1,0 +1,25 @@
+<!-- Ex: A real world example of custom event(how filter works) -->
+
+<div class="container-fluid">
+	<header class="bg-danger text-white text-center p-2 mb-2">
+		<h2>Fake Store - Online Shopping</h2>
+	</header>
+	<section class="row">
+		<nav class="col-3">
+		   <app-filter (FilterChanged)="GetCategoryName($event)" [AllCount]="allCount" [ElectronicsCount]="electronicsCount" [JeweleryCount]="jeweleryCount" [MensClothingCount]="mensCount" [WomensClothingCount]="womensCount" ></app-filter>
+		</nav>    
+		<main class="col-9">
+		   <div class="d-flex flex-wrap overflow-auto" style="height: 500px;">
+			  <div *ngFor="let item of products" class="card m-2 p-2" style="width: 200px;">
+				  <img [src]="item.image" height="200" class="card-img-top">
+				  <div class="card-header" style="height: 170px;">
+					 <p>{{item.title}}</p>
+				  </div>
+				  <div class="card-footer">
+					 <p>{{item.price}}</p>
+				  </div>
+			  </div>
+		   </div>
+		</main>
+	</section>
+ </div>

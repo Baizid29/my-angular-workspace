@@ -1,0 +1,14 @@
+<!-- EX: Key Events -->
+<div class="container-fluid">
+	<h2>Register User</h2>
+	<dl>
+		<dt>User Name</dt>
+		<dd><input type="text" (keyup)="VerifyUser($event)"></dd>
+		<dd [ngClass]="{'text-success':isNameAvailable}">{{statusMessage}}</dd>
+		<dt>Password</dt>
+		<dd><input type="password" (keypress)="VerifyPassword($event)" ></dd>
+		<dd class="text-warning" *ngIf="showCapsError">
+			<span class="bi bi-exclamation-triangle-fill"></span> Caps ON
+		</dd>
+	</dl>
+ </div>

@@ -1,0 +1,13 @@
+<!-- Ex: This the example of custom pipe(parameterized),in pipes folder there is a custom pipe present(sorting),this custom pipe used here -->
+<div class="container-fluid">
+	<h2>Cities</h2>
+	<ol>
+		<li *ngFor="let item of cities|sorting:true">
+		   {{item}}
+		</li>
+		<!-- Ex chain pipes.
+  		<li *ngFor="let item of cities|sorting:true | slice:0:3">
+        	{{item}}
+  		</li>-->
+	</ol>
+  </div>

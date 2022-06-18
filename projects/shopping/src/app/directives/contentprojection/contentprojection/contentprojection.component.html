@@ -1,0 +1,16 @@
+<!-- Example of simple contentProjection -->
+<div class="container-fluid">
+    <button (click)="SwitchClick()">
+        Switch Then Block
+    </button>
+    <div *ngIf="isVisible; then thenBlock; else elseBlock"></div>
+    <ng-template #Block1>
+        Then Block1
+    </ng-template>
+    <ng-template #Block2>
+        Then Block2
+    </ng-template>
+    <ng-template #elseBlock>
+        else block
+    </ng-template>
+</div>

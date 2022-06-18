@@ -1,0 +1,57 @@
+<div>
+    <h1 mat-dialog-title>Register</h1>
+    <form #frmRegister="ngForm" (submit)="RegisterClick(frmRegister.value)">
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>User Id</mat-label>
+                <input name="UserId" ngModel #UserId="ngModel" matInput placeholder="User Id" type="text" (keyup)="VerifyUser($event)">
+            </mat-form-field>
+             <div [ngClass]="ErrorClass">{{UserError}}</div>
+        </div>
+
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>User Name</mat-label>
+                <input name="UserName" ngModel #UserName="ngModel" matInput placeholder="User Name" type="text">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input name="Password" ngModel #Password="ngModel" matInput placeholder="Password" type="text">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Age</mat-label>
+                <input name="Age" ngModel #Age="ngModel" matInput placeholder="Age" type="number">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input name="Email" ngModel #Email="ngModel" matInput placeholder="Email" type="email">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Mobile</mat-label>
+                <input name="Mobile" ngModel #Mobile="ngModel" matInput placeholder="Mobile" type="text">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <button mat-raised-button color="warn">Register</button>
+        </div>
+        
+    </form>
+</div>
+
+
+<br>
+<a routerLink="/login">Existing User</a>
+

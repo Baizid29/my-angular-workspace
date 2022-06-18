@@ -1,0 +1,12 @@
+<!-- Ex: A real world example of custom event(how filter works) -->
+
+<div style="text-align: left; font-size: 25px;">
+    <h3>Product Categories</h3>
+    <ul class="list-unstyled">
+        <li><button (click)="FilterButtonClick($event)" name="all" class="btn btn-link">All [{{AllCount}}]</button></li>
+        <li><button (click)="FilterButtonClick($event)" name="electronics" class="btn btn-link">Electronics [{{ElectronicsCount}}]</button></li>
+        <li><button (click)="FilterButtonClick($event)" name="jewelery" class="btn btn-link">Jewelery [{{JeweleryCount}}]</button></li>
+        <li><button (click)="FilterButtonClick($event)" name="mens' clothing" class="btn btn-link">Men's Clothing [{{MensClothingCount}}]</button></li>
+        <li><button (click)="FilterButtonClick($event)" name="women's clothing" class="btn btn-link">Women's Clothing [{{WomensClothingCount}}]</button></li>
+    </ul>
+</div>

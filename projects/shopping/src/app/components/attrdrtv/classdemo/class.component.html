@@ -1,0 +1,18 @@
+<!-- EX:Attribute directives  - ngClass, ngStyle, ngModel -->
+<div class="container-fluid">
+	<div class="d-flex justify-content-center align-items-center" style="height: 400px;">
+		<form [ngClass]="{'dark-theme':Theme.value}">
+			<div class="form-switch">
+				<input type="checkbox" name="Theme" ngModel #Theme="ngModel" class="form-check-input"> Dark Theme
+			</div>
+			<h2>Register User</h2>
+			<dl>
+				<dt>User Name</dt>
+				<dd><input type="text" [ngClass]="{'invalid-style':UserName.invalid, 'valid-style':UserName.valid}" name="UserName" ngModel #UserName="ngModel" required class="form-control"></dd>
+				<dt>Password</dt>
+				<dd><input type="password" [ngClass]="{'invalid-style':Password.invalid, 'valid-style':Password.valid}" name="Password" ngModel #Password="ngModel" required minlength="4" class="form-control"></dd>
+			</dl>
+			<button class="btn btn-primary w-100">Register</button>
+		</form>
+	</div>
+ </div>

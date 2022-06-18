@@ -1,0 +1,46 @@
+<!-- EX: Custom validation in template forms  and validation css classes-->
+<div class="container-fluid">
+	<div class="row mt-3">
+	  <div class="col-5">
+		  <form #frmRegister="ngForm">
+			  <h2>Register User</h2>
+			  <dl>
+				  <dt>User Name</dt>
+				  <dd><input required minlength="4" name="UserName" ngModel #UserName="ngModel" type="text"></dd>
+				  <dd class="text-danger" *ngIf="frmRegister.submitted || (UserName.touched && UserName.invalid)">
+					  <span *ngIf="UserName.errors?.['required']">User Name Required</span>
+					  <span *ngIf="UserName.errors?.['minlength']">User Name too short</span>
+				  </dd>
+				  <dt>Mobile</dt>
+				  <dd><input required pattern="\+91\d{10}"  type="text" name="Mobile" ngModel #Mobile="ngModel"></dd>
+				  <dd class="text-danger" *ngIf="frmRegister.submitted || (Mobile.touched && Mobile.invalid)">
+					  <span *ngIf="Mobile.errors?.['required']">Mobile Required</span>
+					  <span *ngIf="Mobile.errors?.['pattern']">Invalid Mobile</span>
+				  </dd>
+				  <dt>Your City</dt>
+				  <dd>
+					<select (change)="CityChanged($event)" name="City" ngModel #City="ngModel">
+					  <option value="-1">Select Your City</option>
+					  <option value="Delhi">Delhi</option>
+					  <option value="Hyd">Hyd</option>
+					</select>
+				  </dd>
+				  <dd *ngIf="isCityInValid" class="text-danger">
+					<span>Please Select Your City</span>
+				  </dd>
+				  <dt>Veriy Code [Enter Any Even Number]</dt>
+				  <dd>
+					<input (blur)="VerifyEven($event)" name="Even" ngModel #Even="ngModel" type="text">
+				  </dd>
+				  <dd class="text-danger" *ngIf="isEvenInvalid">
+					<span>Code Required - Must be an Even Number</span>
+				  </dd>
+			  </dl>
+			  <button  type="submit">Register</button>
+			</form>        
+	  </div>
+	  <div class="col-7">
+		 
+	  </div>
+	</div>
+  </div>

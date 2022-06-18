@@ -1,0 +1,33 @@
+<!-- Ex: Form state and Input state validations in one example( register form) -->
+<div class="container-fluid">
+	<div class="row mt-3">
+	  <div class="col-5">
+		  <form [ngClass]="{'valid-style':frmRegister.valid, 'invalid-style':frmRegister.invalid}" #frmRegister="ngForm" (ngSubmit)="FormSubmit(frmRegister.value)">
+			  <h2>Register User</h2>
+			  <dl>
+				  <dt>User Name</dt>
+				  <dd><input required minlength="4" maxlength="10" name="UserName" ngModel #UserName="ngModel" type="text"></dd>
+				  <dt>Mobile</dt>
+				  <dd><input required pattern="\+91[0-9]{10}" type="text" name="Mobile" ngModel #Mobile="ngModel"></dd>
+			  </dl>
+			  <button [disabled]="frmRegister.invalid" type="submit">Register</button>
+			  <button *ngIf="frmRegister.dirty">Save</button>
+			</form>        
+	  </div>
+	  <div class="col-7">
+		  <h2>Validation Services</h2>
+		  <dl>
+			  <dt>Pritine [No Changes Detected]</dt>
+			  <dd>{{frmRegister.pristine}}</dd>
+			  <dt>Dirty  [Changes Detected]</dt>
+			  <dd>{{frmRegister.dirty}}</dd>
+			  <dt>Valid [All fields Valid]</dt>
+			  <dd>{{frmRegister.valid}}</dd>
+			  <dt>Invalid [Any one field Invalid]</dt>
+			  <dd>{{frmRegister.invalid}}</dd>
+			  <dt>Submitted</dt>
+			  <dd>{{frmRegister.submitted}}</dd>
+		  </dl>
+	  </div>
+	</div>
+  </div>

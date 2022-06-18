@@ -1,0 +1,20 @@
+<!-- EX:example of template driven form -->
+<div class="container-fluid">
+	<form #frmRegister="ngForm" (ngSubmit)="FormSubmit(frmRegister.value)">
+	  <h2>Register User</h2>
+	  <dl>
+		  <dt>User Name</dt>
+		  <dd><input name="UserName" ngModel #UserName="ngModel" type="text"></dd>
+		  <dt>Mobile</dt>
+		  <dd><input type="text" name="Mobile" ngModel #Mobile="ngModel"></dd>
+	  </dl>
+	  <button type="submit">Register</button>
+	</form>
+	<h3>Details</h3>
+	<dl>
+		<dt>User Name</dt>
+		<dd>{{frmRegister.value.UserName}}</dd>
+		<dt>Mobile</dt>
+		<dd>{{frmRegister.value.Mobile}}</dd>
+	</dl>
+  </div>

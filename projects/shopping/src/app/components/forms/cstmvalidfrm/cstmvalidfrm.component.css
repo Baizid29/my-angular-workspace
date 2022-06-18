@@ -1,0 +1,20 @@
+/* Ex: Angular validation CSS Classes
+Angular CSS classes can verify the validation state and define effects without using class or style binding.
+--whenever you add this css code you can see the difference with valid css class or without css class */
+
+/* input.ng-valid {
+    border:1px solid green;
+    box-shadow: 2px 2px 2px green;
+}
+input.ng-invalid {
+    border:1px solid red;
+    box-shadow: 2px 2px 2px red;
+}
+form.ng-invalid {
+    background-color: lightpink;
+    padding: 20px;
+}
+form.ng-valid {
+    background-color: lightgreen;
+    padding: 20px;
+} */

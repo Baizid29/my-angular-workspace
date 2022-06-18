@@ -1,0 +1,38 @@
+<!-- EX: example of validation in Model form/Reactive form -->
+<div class="container-fluid">
+    <form [formGroup]="frmRegister" (submit)="FormSubmit(frmRegister.value)" class="p-3 w-75">
+        <h2>Basic Details</h2>
+        <dl>
+            <dt>Name</dt>
+            <dd><input formControlName="Name" type="text"></dd>
+            <dd class="text-danger" *ngIf="Name.touched && Name.invalid">
+                <span *ngIf="Name.errors?.['required']">Name Required</span>
+                <span *ngIf="Name.errors?.['minlength']">Name too short.. min 4 chars</span>
+            </dd>
+            <dt>Price</dt>
+            <dd><input type="text" formControlName="Price"></dd>
+            <dt>Upload Photo <button type="button" (click)="AddClick()" class="btn btn-link">Add More</button></dt>
+            <dd *ngFor="let item of NewControls.controls; let i=index">
+               <input type="file" name="i">
+               <button (click)="RemoveClick(i)" class="btn btn-link">Remove</button>
+            </dd>
+            <div formGroupName="frmStock" class="bg-info p-3 w-25">
+                <h3>Stock Details</h3>
+                <dl>
+                    <dt>Status</dt>
+                    <dd><input type="checkbox" formControlName="Status"> Available</dd>
+                    <dt>City</dt>
+                    <dd>
+                        <select formControlName="City">
+                            <option>Delhi</option>
+                            <option>Hyd</option>
+                            <option>Chennai</option>
+                        </select>
+                    </dd>
+                </dl>
+            </div>
+        </dl>
+        <button>Register</button>
+        <button (click)="UpdatePartial()" type="button">Update Partial</button>
+    </form>
+</div>

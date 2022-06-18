@@ -1,0 +1,43 @@
+<!-- EX:1-->
+	 <div class="container-fluid">
+    <button (click)="AddNewProduct()" class="btn btn-primary">Add New</button>
+    <div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of products; trackBy:TrackChanges">
+                    <td>{{item.Name}}</td>
+                    <td>{{item.Price}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> 
+
+<!-- EX-2 : Likes Counter 
+
+<div class="container-fluid">
+	<div class="d-flex flex-wrap m-3">
+	   <div class="card m-2 p-2" *ngFor="let item of products" style="width: 400px;">
+		  <img [src]="item.Photo" height="200px" class="card-img-top">
+		  <div class="card-header">
+			  <h3>{{item.Name}}</h3>
+		  </div>
+		  <div class="card-footer btn-group">
+			  <button (click)="LikesClick(item)" class="btn btn-success">
+				  <span class="bi bi-hand-thumbs-up-fill"></span>
+				   [{{item.Likes}}] Like(s)
+			  </button>
+			  <button (click)="DislikesClick(item)" class="btn btn-danger">
+				  <span class="bi bi-hand-thumbs-down-fill"></span>
+				   [{{item.Dislikes}}] Dislike(s)
+			  </button>
+		  </div>
+	   </div>
+	</div>
+  </div>-->
